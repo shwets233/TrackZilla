@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Edit Release</title>
+</head>
+<body>
+<div class="container">
+    <div th:insert="fragments/navbar.html"> </div>
+    <div class="jumbotron">
+        <h3>Edit Release</h3>
+        <form action="#" th:action="@{/saveRelease}" th:object="${release}"
+              method="post">
+
+            <table class="table table-striped" border="0" cellpadding="10">
+                <tr>
+                    <td>Release Id:</td>
+                    <td><input type="text" th:field="*{id}" readonly="readonly"/> </td>
+                </tr>
+                <tr>
+                    <td>Release Date:</td>
+                    <td><input type="text" th:field="*{releaseDate}" /></td>
+                </tr>
+                <tr>
+                    <td>Description:</td>
+                    <td><input type="text" th:field="*{description}" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button type="submit">Save</button> </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</div>
+</body>
+</html>
